@@ -1,4 +1,5 @@
 # Pratik_HindiOCR
+
 # 📝 Hindi Handwritten Character Recognition using ResNet18
 
 A Deep Learning based Hindi (Devanagari) Handwritten Character Recognition system built using **PyTorch**, **ResNet18**, and **Streamlit**.
@@ -53,7 +54,7 @@ Image Format:
 
 Example Classes:
 
-```
+```text
 क ख ग घ ङ
 च छ ज झ ञ
 ट ठ ड ढ ण
@@ -88,11 +89,45 @@ model.fc = nn.Linear(model.fc.in_features, 46)
 
 ---
 
+## Pretrained Model
+
+The trained model (`devanagari_resnet18.pth`) is **not included in this repository** because of GitHub file size limitations.
+
+### Download Model
+
+Download the pretrained model from Google Drive:
+
+**Google Drive Link:**
+https://drive.usercontent.google.com/download?id=1li3vjKVcsmd_LKIqdr2H0zaDIRQfJ7t4&export=download&authuser=0
+
+After downloading, place:
+
+```text
+devanagari_resnet18.pth
+```
+
+inside:
+
+```text
+HindiOCR/
+
+├── app.py
+├── preprocess.py
+
+├── devanagari_resnet18.pth
+├── class_names.txt
+
+├── requirements.txt
+└── README.md
+```
+
+---
+
 ## Preprocessing Pipeline
 
 When the user uploads an image:
 
-```
+```text
 Uploaded Image
 
 ↓
@@ -128,17 +163,15 @@ Display Hindi Character
 
 ## Project Structure
 
-```
+```text
 HindiOCR/
 
 ├── app.py
 ├── preprocess.py
 
-├── devanagari_resnet18.pth
 ├── class_names.txt
 
 ├── requirements.txt
-
 └── README.md
 ```
 
@@ -158,7 +191,7 @@ cd HindiOCR
 
 ### Create Virtual Environment
 
-Windows:
+**Windows**
 
 ```bash
 python -m venv venv
@@ -166,7 +199,7 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-Linux / Mac:
+**Linux / Mac**
 
 ```bash
 python3 -m venv venv
@@ -186,15 +219,10 @@ or manually:
 
 ```bash
 pip install torch
-
 pip install torchvision
-
 pip install streamlit
-
 pip install pillow
-
 pip install numpy
-
 pip install opencv-python
 ```
 
@@ -237,27 +265,27 @@ http://localhost:8501
 
 ## How To Use
 
-1. Open Streamlit App.
+1. Open the Streamlit application.
 
-2. Upload image:
+2. Upload an image:
 
-```
+```text
 png
 jpg
 jpeg
 ```
 
-3. App automatically:
+3. The application automatically:
 
 * Converts image to grayscale
 * Applies thresholding
-* Crops character
-* Resizes image
-* Predicts class
+* Crops character region
+* Resizes image to 64×64
+* Predicts the Hindi character
 
 4. Output:
 
-```
+```text
 Prediction : क
 
 Confidence : 99.18%
@@ -267,39 +295,39 @@ Confidence : 99.18%
 
 ## Training Details
 
-Model:
+**Model**
 
-```
+```text
 ResNet18
 ```
 
-Optimizer:
+**Optimizer**
 
-```
+```text
 Adam
 ```
 
-Learning Rate:
+**Learning Rate**
 
-```
+```text
 0.001
 ```
 
-Loss Function:
+**Loss Function**
 
-```
+```text
 CrossEntropyLoss
 ```
 
-Epochs:
+**Epochs**
 
-```
+```text
 20
 ```
 
-Image Size:
+**Image Size**
 
-```
+```text
 64×64
 ```
 
@@ -318,7 +346,7 @@ Image Size:
 
 ## Author
 
-Pratik Kumar Sinha
+**Pratik Kumar Sinha**
 
 B.Tech CSE
 
